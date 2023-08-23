@@ -58,7 +58,7 @@ void TraCIDemoRSU11p::handleSelfMsg(cMessage* msg)
     if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
         sendDown(wsm->dup()); //send the message now
         //sendDelayedDown(wsm, 0.05); //send message with a fixed delay [0.05 seconds]
-        //sendDelayedDown(wsm, 2 + uniform(0.01, 0.2)); //send message with a random delay [between 0.01 and 0.2 seconds]
+        //sendDelayedDown(wsm, uniform(0.01, 0.2)); //send message with a random delay [between 0.01 and 0.2 seconds]
         delete(wsm); //delete the message
 
     } else {

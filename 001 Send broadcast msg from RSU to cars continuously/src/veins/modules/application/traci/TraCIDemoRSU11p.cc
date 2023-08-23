@@ -40,7 +40,7 @@ void TraCIDemoRSU11p::initialize(int stage)
         //stage 1 - Here the vehicle already have the link layer ID (myId)
         TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage(); //create a message called wsm
         populateWSM(wsm, -1, 0); //fill the principal message fields [wsm = message] [-1 = send to broadcast] [0 = any serial number]
-        scheduleAt(simTime() + 2, wsm); //Make an appointment for 2 seconds from now [using self messages]
+        scheduleAt(simTime() + 2, wsm); //Make an schedule for 2 seconds from now [using self messages]
     }
 }
 
@@ -58,8 +58,8 @@ void TraCIDemoRSU11p::handleSelfMsg(cMessage* msg)
     if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
         sendDown(wsm->dup()); //send the message now
         //sendDelayedDown(wsm, 0.05); //send message with a fixed delay [0.05 seconds]
-        //sendDelayedDown(wsm, 2 + uniform(0.01, 0.2)); //send message with a random delay [between 0.01 and 0.2 seconds]
-        scheduleAt(simTime() + 2, wsm); //Make an appointment for 2 seconds from now [using self messages]
+        //sendDelayedDown(wsm, uniform(0.01, 0.2)); //send message with a random delay [between 0.01 and 0.2 seconds]
+        scheduleAt(simTime() + 2, wsm); //Make an schedule for 2 seconds from now [using self messages]
 
 
     } else {
