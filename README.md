@@ -3,7 +3,7 @@ Vanet Projects using Omnet++, SUMO and Veins
 
 **Portugues**
 ```
-Repositório com varios projetos de rede veicular (VANET)
+Repositório com vários projetos de rede veicular (VANET)
 ```
 
 **English**
