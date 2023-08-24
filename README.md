@@ -48,5 +48,12 @@ Todos os veículos com IDs multiplos de 5 fazem um "ping" para RSU, que responde
 A RSU envia mensagens via broadcast, mas apenas alguns veículos selecionados processam a menssagem. Foi criado na mensagem, um campo do tipo string chamada multicastAddr, no qual é enviado varios IDs de veículos separados por ';'. Quando o veículo recebe a mensagem, ele verifica se o seu ID está na lista, caso positivo um circulo verde será colocado em volta do veículo.
 ```
 
+**007 CAR send msg to another car via RSU**
+```
+O veículo de de ID 16 (node[0]) quer enviar uma mensagm para o veículo de de ID 286 (node[45]), mas este ainda não entrou na via. Então, o primeiro veículo envia a mensagem para a RSU que retransmite para o segundo veículo.
+Todos os nós permanecem enviando a mensagem a cada 2 segundos até que o destino envie de volta uma confirmação de recebimento.
+```
+
+
 
 
