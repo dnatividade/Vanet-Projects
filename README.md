@@ -54,6 +54,17 @@ O veículo de de ID 16 (node[0]) quer enviar uma mensagm para o veículo de de I
 Todos os nós permanecem enviando a mensagem a cada 2 segundos até que o destino envie de volta uma confirmação de recebimento.
 ```
 
+**008 The Telephone Game - CAR sends the message to its neighbor, which forwards it to the next neighbor, until it reaches the last vehicle**
+```
+O veículo de de ID 16 (node[0]) envia uma ensagem para o proximo veiculo da fila, ID 22 (node[1]), que reencaminha essa mensagem para o proximo até chegar no último veículo da simulação.
+Os nós permanecem retransmitindo a mensagem a cada 2 segundos até que o destino envie de volta uma confirmação de recebimento.
+O endereço do nó vizinho é encontrado somando 6 em seu ID (esta é uma caracterisca do simulador).
+Os veiculos entra na via na cor vermelho. Ao receber a mensagem, o veículo muda sua cor para verde, amarelo, azul ou branco. É feito um rodizio das cores, para cada veículo.
+```
+
+![the-telephone-game](008
+.gif)
+
 
 
 
