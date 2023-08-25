@@ -62,8 +62,7 @@ O endereço do nó vizinho é encontrado somando 6 em seu ID (esta é uma caract
 Os veiculos entra na via na cor vermelho. Ao receber a mensagem, o veículo muda sua cor para verde, amarelo, azul ou branco. É feito um rodizio das cores, para cada veículo.
 ```
 
-![the-telephone-game](008
-.gif)
+![the-telephone-game](008.gif)
 
 
 
