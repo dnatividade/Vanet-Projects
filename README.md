@@ -73,9 +73,9 @@ Os veiculos entra na via na cor vermelho. Ao receber a mensagem, o veículo muda
 ### 009 Messages record
 
 >Assim como no projeto 001, a RSU faz agendamentos a cada 2 segundos para o envio de mensagens via broadcast. Desta vez, os veículos mantém um registro das mensagens recebidas. Os campos da mensagem (serial, senderAddress e demoData) são contatenados e um hash é gerado para ser o ID do registro, isso para não haver mensagens repetidas na tabela de mensagens. O mecanismo de armazenamento usado é um MAP com um struct.
-![messages-record](img/009.png
-)
 
+![messages-record](img/009.png)
+---
 
 
 
