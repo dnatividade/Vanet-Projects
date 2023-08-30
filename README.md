@@ -19,7 +19,7 @@ Repository with various vehicular network projects (VANET)
 
 ### 001 Send broadcast msg from RSU to cars continuously
 
->A RSU faz agendamentos a cada 2 segundos para o envio de uma mensagens via broadcast.
+>A RSU faz agendamentos a cada 2 segundos para o envio de mensagens via broadcast.
 ---
 
 
@@ -67,8 +67,15 @@ Os nós permanecem retransmitindo a mensagem a cada 2 segundos até que o destin
 O endereço do nó vizinho é encontrado somando 6 em seu ID (esta é uma caracterisca do simulador).
 Os veiculos entra na via na cor vermelho. Ao receber a mensagem, o veículo muda sua cor para verde, amarelo, azul ou branco. É feito um rodizio das cores, para cada veículo.
 
-![the-telephone-game](008.gif)
+![the-telephone-game](img/008.gif)
 ---
+
+### 009 Messages record
+
+>Assim como no projeto 001, a RSU faz agendamentos a cada 2 segundos para o envio de mensagens via broadcast. Desta vez, os veículos mantém um registro das mensagens recebidas. Os campos da mensagem (serial, senderAddress e demoData) são contatenados e um hash é gerado para ser o ID do registro, isso para não haver mensagens repetidas na tabela de mensagens. O mecanismo de armazenamento usado é um MAP com um struct.
+![messages-record](img/009.png
+)
+
 
 
 
