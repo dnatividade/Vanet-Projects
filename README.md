@@ -10,7 +10,7 @@ Vanet Projects using Omnet++, SUMO and Veins
 Repositório com vários projetos de rede veicular (VANET)
 ```
 
-**English**
+**English** ![readme-pt-br](https://img.shields.io/badge/readme-en-red)
 ```
 Repository with various vehicular network projects (VANET)
 ```
