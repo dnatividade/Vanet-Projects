@@ -19,6 +19,7 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 //
+//App: @dnat
 
 #include "veins/modules/application/traci/TraCIDemo11p.h"
 
@@ -43,7 +44,7 @@ void TraCIDemo11p::initialize(int stage)
     } else {
         //stage 1 - Here the vehicle already have the link layer ID (myId)
 
-        //if myId is divisible by 4
+        //if myId is divisible by 5
         if (myId % 5 == 0) {
             TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage(); //create a message called wsm
             populateWSM(wsm, 10, 1); //fill the principal message fields [wsm = message] [10 = send to RSU] [1 = any serial number]
