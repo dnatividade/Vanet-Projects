@@ -1,0 +1,456 @@
+[
+    {
+        "id": "d89852bfa81e3d21",
+        "type": "tab",
+        "label": "Veins-Speed",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "08c0eb3ba7bdbe46",
+        "type": "tcp in",
+        "z": "d89852bfa81e3d21",
+        "name": "",
+        "server": "server",
+        "host": "",
+        "port": "8080",
+        "datamode": "single",
+        "datatype": "utf8",
+        "newline": "",
+        "topic": "",
+        "trim": false,
+        "base64": false,
+        "tls": "",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "2ef0c387955939cf"
+            ]
+        ]
+    },
+    {
+        "id": "0ef04a207670d60f",
+        "type": "ui_gauge",
+        "z": "d89852bfa81e3d21",
+        "name": "",
+        "group": "4a65eed171a5a219",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Speed",
+        "label": "m/s",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "5",
+        "seg2": "10",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a297b58bdbe30eb3",
+        "type": "ui_gauge",
+        "z": "d89852bfa81e3d21",
+        "name": "",
+        "group": "4a65eed171a5a219",
+        "order": 3,
+        "width": 6,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Acceleration",
+        "label": "m/s²",
+        "format": "{{value}}",
+        "min": "-5",
+        "max": "5",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "-3",
+        "seg2": "3",
+        "diff": false,
+        "className": "",
+        "x": 1070,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1795ad836c18b5b7",
+        "type": "inject",
+        "z": "d89852bfa81e3d21",
+        "name": "DEBUG JSON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "payload": "{\"Acceleration\":0.5022652115672877,\"Battery\":0.0,\"CO2\":4166.646962983007,\"Fuel\":1.7910619610339367,\"Id\":16,\"Speed\":13.940553226950579}",
+        "payloadType": "str",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "2ef0c387955939cf"
+            ]
+        ]
+    },
+    {
+        "id": "5fa650ca478ff82a",
+        "type": "change",
+        "z": "d89852bfa81e3d21",
+        "name": "Speed",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload.Speed",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 120,
+        "wires": [
+            [
+                "46024994f0e0b16f"
+            ]
+        ]
+    },
+    {
+        "id": "2ef0c387955939cf",
+        "type": "json",
+        "z": "d89852bfa81e3d21",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "5fa650ca478ff82a",
+                "49e1861680d244fd",
+                "5006b022d1b2403b",
+                "33f81fcdf0baca4b",
+                "9e5eca18495f6494",
+                "7b327863298ef3c4"
+            ]
+        ]
+    },
+    {
+        "id": "49e1861680d244fd",
+        "type": "change",
+        "z": "d89852bfa81e3d21",
+        "name": "Acceleration",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload.Acceleration",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "15aaa3021ec98392"
+            ]
+        ]
+    },
+    {
+        "id": "5006b022d1b2403b",
+        "type": "change",
+        "z": "d89852bfa81e3d21",
+        "name": "CO2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload.CO2",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 200,
+        "wires": [
+            [
+                "15d6f39c2a96eb2f"
+            ]
+        ]
+    },
+    {
+        "id": "46024994f0e0b16f",
+        "type": "function",
+        "z": "d89852bfa81e3d21",
+        "name": "Format float",
+        "func": "msg.payload = msg.payload.toFixed(2);\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 120,
+        "wires": [
+            [
+                "0ef04a207670d60f"
+            ]
+        ]
+    },
+    {
+        "id": "15aaa3021ec98392",
+        "type": "function",
+        "z": "d89852bfa81e3d21",
+        "name": "Format float",
+        "func": "msg.payload = msg.payload.toFixed(2);\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 160,
+        "wires": [
+            [
+                "a297b58bdbe30eb3"
+            ]
+        ]
+    },
+    {
+        "id": "15d6f39c2a96eb2f",
+        "type": "function",
+        "z": "d89852bfa81e3d21",
+        "name": "Format float",
+        "func": "//msg.payload = msg.payload.toFixed(2);\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 200,
+        "wires": [
+            [
+                "83af245544798456"
+            ]
+        ]
+    },
+    {
+        "id": "035358fbdfc3f294",
+        "type": "function",
+        "z": "d89852bfa81e3d21",
+        "name": "Format float",
+        "func": "msg.payload = msg.payload.toFixed(2);\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "c881ec3dce30988f"
+            ]
+        ]
+    },
+    {
+        "id": "33f81fcdf0baca4b",
+        "type": "change",
+        "z": "d89852bfa81e3d21",
+        "name": "Fuel consumption",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload.Fuel",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 240,
+        "wires": [
+            [
+                "035358fbdfc3f294"
+            ]
+        ]
+    },
+    {
+        "id": "83af245544798456",
+        "type": "ui_gauge",
+        "z": "d89852bfa81e3d21",
+        "name": "",
+        "group": "4a65eed171a5a219",
+        "order": 4,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "CO2 emissions",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1080,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c881ec3dce30988f",
+        "type": "ui_gauge",
+        "z": "d89852bfa81e3d21",
+        "name": "",
+        "group": "4a65eed171a5a219",
+        "order": 5,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "Fuel comsumption",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1090,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "7a6850891b81f07a",
+        "type": "ui_text",
+        "z": "d89852bfa81e3d21",
+        "group": "4a65eed171a5a219",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Node ID",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1060,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "9e5eca18495f6494",
+        "type": "change",
+        "z": "d89852bfa81e3d21",
+        "name": "myId",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload.Id",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 80,
+        "wires": [
+            [
+                "7a6850891b81f07a"
+            ]
+        ]
+    },
+    {
+        "id": "7b327863298ef3c4",
+        "type": "debug",
+        "z": "d89852bfa81e3d21",
+        "name": "DEBUG",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4a65eed171a5a219",
+        "type": "ui_group",
+        "name": "Telemetry",
+        "tab": "3e1346fb3ebc2746",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3e1346fb3ebc2746",
+        "type": "ui_tab",
+        "name": "Veins-Speed",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
