@@ -77,6 +77,13 @@ Os veículos entram na via na cor vermelho e, ao receber a mensagem, mudam sua c
 ![messages-record](img/009.png)
 ---
 
+### 010 Ping-Pong RSU-CA
+
+>O veículo de de ID 22 (node[0]) envia uma ensagem para a RSU de ID 11 (rsu[0]) aos 75 segundos de simulação. Ao receber a mensagem, inicia-se um "ping pong" entre a RSU de ID 11 (rsu[0]) e a CA de ID 16 (ca[0]), na qual é enviada uma mensagem de um para outro até o fim da simulação. Nesta simulação foi incluído mais um elemento na rede chamado CA (Central Authority). A CA funciona basicamente como uma RSU, mas servirá, em exemplos futuros, como um local para centralizar e consolidar as mensagens enviadas pelos veículos na rede.
+
+![messages-record](img/010.gif)
+---
+
 
 
 
