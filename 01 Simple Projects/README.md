@@ -87,7 +87,7 @@ Os veículos entram na via na cor vermelho e, ao receber a mensagem, mudam sua c
 
 ### 011 Messages record (hash MD5)
 
->Assim como no Projeto 009, um hash é gerado para ser o ID do registro, isso é feito para não haver mensagens repetidas na tabela de mensagens. Desta vez, foi utilizado o hash MD5 da biblioteca Crypto++. Para funcionar corretamente, é necessário instalar o pacote ```libcrypto++-dev``` e adicionar ```-lcrypto``` na compilação.
+>Assim como no Projeto 009, um hash é gerado para ser o ID do registro, isso é feito para não haver mensagens repetidas na tabela de mensagens. Desta vez, foi utilizado o hash MD5 da biblioteca Crypto++. Para funcionar corretamente, é necessário instalar o pacote ```libcrypto++-dev``` e adicionar ```-lcryptopp``` na compilação.
 
 ![messages-record](img/011.png)
 ---
