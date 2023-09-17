@@ -20,12 +20,14 @@ Repository with various vehicular network projects (VANET)
 ### 001 Simple Project
 
 >Projetos simples para introdução do framework Veins
+>Simple projects to introduce the Veins framework
 ---
 
 
 ### 002 Veins + Node-RED Projects
 
 >Exemplos de uso do Veins com o Node-RED
+>Examples of using Veins with Node-RED
 ---
 
 
