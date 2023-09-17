@@ -1,3 +1,4 @@
+//@dnat
 .h:
 protected:
     //Message record

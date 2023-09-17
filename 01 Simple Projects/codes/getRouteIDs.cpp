@@ -1,9 +1,6 @@
-//obtém uma lista com todas as vias que o veículo ira passar
-
-//cria uma lista de strings
-std::list<std::string> routeIDs;
-//limpa a lista criada
-routeIDs.clear();
-//obtem a rota do veículo
-routeIDs = traciVehicle->getPlannedRoadIds();
+//@dnat
+// Get a list of all roads the vehicle will travel on
+std::list<std::string> routeIDs; //create string list
+routeIDs.clear(); //clear list
+routeIDs = traciVehicle->getPlannedRoadIds(); //get vehicle route
 

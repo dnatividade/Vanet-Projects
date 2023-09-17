@@ -1,3 +1,4 @@
+//@dnat
 //This method sends a ACK from 'src' to 'dst'
 void TraCIDemo11p::sendAck(int src, int dst) {
     TraCIDemo11pMessage* ack = new TraCIDemo11pMessage();
