@@ -1,3 +1,4 @@
+//@dnat
 //This method changes the message fields to forward to another node
 void TraCIDemo11p::forwardWsm(TraCIDemo11pMessage* wsm) {
     wsm->setRecipientAddress(myId+6); //set new destination

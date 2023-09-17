@@ -1,3 +1,4 @@
+//@dnat
 #include <zlib.h>
 
 
