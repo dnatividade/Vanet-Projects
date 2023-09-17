@@ -23,5 +23,3 @@ Repository with various vehicular network projects (VANET)
 ---
 
 
-
-
