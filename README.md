@@ -25,10 +25,10 @@ Repository with various vehicular network projects (VANET)
 ---
 
 
-### 002 Veins + Node-RED Projects
+### 002 Advanced Projects
 
->Exemplos de uso do Veins com o Node-RED
+>Exemplos de uso do Veins com outras ferramentas, como Node-RED e Python
  
->Examples of using Veins with Node-RED
+>Examples of using Veins with other tools, as Node-RED and Python
 ---
 
