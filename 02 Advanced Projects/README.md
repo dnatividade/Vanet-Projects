@@ -20,6 +20,7 @@ Repository with various vehicular network projects (VANET)
 >The vehicle with ID 16 (node[0]) sends speed, acceleration, CO2 emission and fuel consumption data to a Node-RED server, which graphically displays this information in real time.
 
 ![car-telemetry](img/001.gif)
+
 ---
 
 ### 002 Neighborhood Map (Python-Matplotlib)
@@ -29,6 +30,7 @@ Repository with various vehicular network projects (VANET)
 >Vehicles exchange position messages every 1 second. Vehicle ID 82 makes a neighborhood map and plots the positions of its neighbors in real time using Python3 and Matplotlib.
 
 ![neighborhood-map](img/002.gif)
+
 ---
 
 
