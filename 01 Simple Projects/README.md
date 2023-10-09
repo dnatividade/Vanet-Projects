@@ -140,11 +140,19 @@ Vehicles enter the road in red and, upon receiving the message, change their col
 
 >After 200 seconds of simulation, the vehicle with ID 400 sends a message (location request message) to find the vehicle with ID 28. The network is flooded until the vehicle is found and responds (location repeat message) to the vehicle 400. Stop conditions with TTL and signaling flags are used in order to contain flooding in the network.
 
-![messages-record](img/0123.png)
+![messages-record](img/013.png)
 
 ---
 
+### 014 Simple routing to send a message
 
+>Aos 200 segundos de simulação, o veículo de ID 380 envia uma mensagem (find-request message) )para encontrar o veículo de ID 28. É feito um flood na rede até que o veículo seja encontrado e responda (find-replay message) para o veículo 400. São utilizadas condições de parada com TTL e flags de sinalização, a fim de conter o flooding na rede. Quando o veículo é encontrado, uma mensagem contendo um payload é enviada para o destindo, passando pelos hops obtidos durante a fase e "find-request/find-replay".
+
+>After 200 seconds of simulation, the vehicle with ID 400 sends a message (location request message) to find the vehicle with ID 28. The network is flooded until the vehicle is found and responds (location repeat message) to the vehicle 400. Stop conditions with TTL and signaling flags are used in order to contain flooding in the network. When the vehicle is found, a message containing a payload is sent to the destination, going through the hops obtained during the "find-request/find-replay" phase.
+
+![messages-record](img/014.png)
+
+---
 
 
 ```
