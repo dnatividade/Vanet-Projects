@@ -8,8 +8,8 @@
 #define RSU1 11 //not used in this project
 #define CA1  16 //not used in this project
 #define CAR1 478//190//400 //source car
-#define CAR2 28  //destination car
-#define TIME 235 //time to start the search
+#define CAR2 28//724//28  //destination car
+#define TIME 235//100//235 //time to start the search
 
 // Type of MsgFind
 #define FIND_REQUEST 0

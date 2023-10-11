@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-08-21 15:00:57 by Eclipse SUMO netedit Version v1_16_0+2321-723162e4f9a
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Routes -->
+    <route id="r_0" edges="-E46 -E45 -E29 -E3 E6 -E17 -E16 E14"/>
+    <!-- Vehicles, persons and containers (sorted by depart) -->
+    <trip id="t_0" depart="0.00" from="E25" to="E24" via="E26 E28"/>
+    <trip id="t_1" depart="0.00" from="-E13" to="E13"/>
+    <trip id="t_2" depart="0.00" from="-E21" to="-E5" via="E22"/>
+    <trip id="t_3" depart="0.00" from="E20" to="E4" via="E22"/>
+    <trip id="t_4" depart="0.00" from="E11" to="-E11"/>
+    <vehicle id="v_0" depart="0.00" color="red" route="r_0"/>
+    <flow id="f_0" begin="0.00" from="E12" to="-E14" via="-E8 E25 E9 -E1" end="3600.00" probability="0.50"/>
+    <flow id="f_1" begin="0.00" from="-E31" to="E30" number="1800" period="2.00"/>
+    <flow id="f_10" begin="0.00" from="-E13" to="E13" number="1800" period="2.00"/>
+    <flow id="f_11" begin="0.00" from="-E19" to="-E36" number="1800" period="2.00"/>
+    <flow id="f_2" begin="0.00" from="-E2" to="E23" via="E10 E17" number="1800" period="2.00"/>
+    <flow id="f_3" begin="0.00" from="-E8" to="E8" number="1800" period="2.00"/>
+    <flow id="f_4" begin="0.00" from="E35" to="E33" via="E37 -E37" number="1800" period="2.00"/>
+    <flow id="f_5" begin="0.00" from="E41" to="E43" via="E42" number="1800" period="2.00"/>
+    <flow id="f_6" begin="0.00" from="E21" to="E22" number="1800" period="2.00"/>
+    <flow id="f_7" begin="0.00" from="-E11" to="-E5" number="1800" period="2.00"/>
+    <flow id="f_8" begin="0.00" from="E4" to="E3" number="1800" period="2.00"/>
+    <flow id="f_9" begin="0.00" from="E7" to="E8" via="E9" number="1800" period="2.00"/>
+</routes>

@@ -47,6 +47,7 @@ protected:
     int cancelMsgReq = 0;   //flag: cancel sending find-request message
     int cancelMsgRep = 0;   //flag: cancel sending find-replay message
     int cancelSent = 0;     //flag: car found. Stop sending find-cancel message
+    int coloredCar = 0;     //flag: colored car?
 
     std::vector<simtime_t> idVector;
 };

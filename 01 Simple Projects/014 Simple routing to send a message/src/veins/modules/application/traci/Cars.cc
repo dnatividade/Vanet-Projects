@@ -68,6 +68,8 @@ void Cars::initialize(int stage) {
     if (stage == 1) {
         if (myId == CAR1) {
             findHost()->getDisplayString().setTagArg("i", 1, "red");
+            coloredCar = 1;
+
             msgCreatedByMe = 1;
             MsgFind* findReq = new MsgFind();
             populateWSM(findReq, -1);
@@ -103,14 +105,15 @@ void Cars::onWSM(BaseFrame1609_4* frame) {
         // ************************
         // if MsgFind-request...
         if (find->getType() == FIND_REQUEST) {
-            findHost()->getDisplayString().setTagArg("i", 1, "yellow");
+            if (!coloredCar)
+                findHost()->getDisplayString().setTagArg("i", 1, "yellow");
+
             //std::cout << "CAR:  " << myId << " | *FIND_REQUEST* received | SRC: " << find->getSrc() << " | DST: " << find->getDst() << " | SimTime: " << simTime() << endl; //print information
 
             // if it is me...
             if (myId == find->getDst()) {
                 if (cancelMsgRep == 0) {
                     cancelMsgRep = 1;
-                    //findHost()->getDisplayString().setTagArg("i", 1, "yellow");
                     findHost()->getDisplayString().updateWith("r=30,green");
                     std::cout << "CAR:  " << myId << " | *I AM HERE* | SimTime: " << simTime() << endl; //print information
 
@@ -153,7 +156,6 @@ void Cars::onWSM(BaseFrame1609_4* frame) {
             if (myId == find->getDst()) {
                 if (cancelSent == 0) {
                     cancelSent = 1 ;
-                    //findHost()->getDisplayString().setTagArg("i", 1, "green");
                     findHost()->getDisplayString().updateWith("r=30,green");
                     std::cout << "CAR:  " << myId << " | *CAR FOUND* | SimTime: " << simTime() << endl; //print information
                     std::cout << "Hops: " << find->getHops() << endl;
@@ -228,6 +230,7 @@ void Cars::onWSM(BaseFrame1609_4* frame) {
         if (wsm->getDst() != myId) {
 
             findHost()->getDisplayString().setTagArg("i", 1, "blue");
+            coloredCar = 1;
 
             std::string hops = wsm->getHops(); //get hops
             std::cout << "Hops: " << hops << endl << endl;
