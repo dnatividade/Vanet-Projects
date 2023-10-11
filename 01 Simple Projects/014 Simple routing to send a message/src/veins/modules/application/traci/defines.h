@@ -1,6 +1,6 @@
 /*
  * @brief
- * Include file to use in "<this> Project"
+ * Include file to use in "014 Project"
  * This file contain all necessary defines to use in Cars,RSU and CA
  */
 //@dnat
@@ -22,3 +22,4 @@
 #define DELAY_FW     0.5  //delay to forward request and reply message
 
 #define PAYLOAD      "I have a important message to you\n"
+
