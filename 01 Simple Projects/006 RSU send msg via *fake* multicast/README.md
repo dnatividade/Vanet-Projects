@@ -1,8 +1,8 @@
-# 006 RSU send msg via "fake" multicast ![projects-Veins](https://img.shields.io/badge/projects-Veins-blue)
+# 005 Some vehicles ping RSU and RSU answer (ping - pong) ![projects-Veins](https://img.shields.io/badge/projects-Veins-blue)
 
->A RSU envia mensagens via broadcast, mas apenas os veículos selecionados processam a menssagem. Foi criado na mensagem, um campo do tipo string chamada multicastAddr, no qual é enviado varios IDs de veículos separados por ';'. Quando o veículo recebe a mensagem, ele verifica se o seu ID está na lista, caso positivo um circulo verde será colocado em volta do veículo.
+>Todos os veículos com IDs multiplos de 5 fazem um "ping" para RSU, que responde com um "pong". Quando o veículo envia o "ping", ele fica amarelo. E quando ele recebe o "pong", fica com um circulo vermelho, verde ou azul a sua volta. É feito um rodizio das cores, para cada "pong" recebido.
  
->The RSU sends messages via broadcast, but only selected vehicles process the message. A string field called multicastAddr was created in the message, in which several vehicle IDs separated by ';' are sent. Upon receiving the message, the vehicle checks whether its ID is on the list, if so, a green circle will be placed around the vehicle.
+>All vehicles with IDs that are multiples of 5 make a “ping” to RSU, which responds with a “pong”. When the vehicle sends the “ping”, it turns yellow. And when he receives the “pong”, he has a red, green or blue circle around him. The colors are rotated for each “pong” received.
 ---
 
 ```
